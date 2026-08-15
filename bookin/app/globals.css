@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-paper text-ink font-body;
+}
+
+.bg-graph-surface {
+  background-color: #f6f5f1;
+  background-image:
+    linear-gradient(to right, #e7e4db 1px, transparent 1px),
+    linear-gradient(to bottom, #e7e4db 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Signature element: the status dot. Every piece of equipment gets one.
+   Small, precise, glows faintly like an indicator LED on a real instrument. */
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.status-dot--available {
+  background: #e2a33b;
+  box-shadow: 0 0 0 3px rgba(226, 163, 59, 0.18);
+}
+.status-dot--booked {
+  background: #c1503c;
+  box-shadow: 0 0 0 3px rgba(193, 80, 60, 0.18);
+}
+.status-dot--maintenance {
+  background: #8a8778;
+  box-shadow: 0 0 0 3px rgba(138, 135, 120, 0.18);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #2b6e68;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
